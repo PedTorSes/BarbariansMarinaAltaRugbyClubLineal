@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbarians Rugby Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --azul: #003366; --amarillo: #FFD700; }
+        .bg-azul { background-color: var(--azul); }
+        .text-azul { color: var(--azul); }
+        .bg-amarillo { background-color: var(--amarillo); }
+        .border-amarillo { border-color: var(--amarillo); }
+        .drop-zone { border: 2px dashed #ccc; transition: 0.3s; }
+        .drop-zone--over { border-color: var(--azul); background: #f0f4f8; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-900">
+<!--CABECERA AZUL DE LA PÁGINA-->
+    <nav class="bg-azul text-white sticky top-0 z-50 shadow-lg h-20">
+        <div class="container mx-auto px-6 py-2 h-full flex justify-between items-center relative">
+            <div class="flex items-center">
+                <div class="absolute top w-[120px] h-[120px]  flex items-center justify-center overflow-hidden">
+                    <img src="IMAGES/LOGO_BARBARIANS.png" alt="Logo BRC" class="max-w-full max-h-full object-contain">
+                </div>
+                <span class="text-xl font-black tracking-tighter ml-24 uppercase italic">Barbarians <span class="text-amarillo">RC</span></span>
+            </div>
+<!--CABECERA DE NAVEGACIÓN ENTRE APARTADOS-->
+            <div class="hidden md:flex space-x-8 font-bold uppercase text-sm">
+                <a href="#inicio" class="hover:text-amarillo">Inicio</a>
+                <a href="#eventos" class="hover:text-amarillo">Calendario</a>
+                <a href="#inscripcion" class="hover:text-amarillo">Inscripción</a>
+                <a href="#tienda" class="hover:text-amarillo">Tienda</a>
+                <a href="#contacto" class="hover:text-amarillo">Contacto</a>
+            </div>
+        </div>
+    </nav>
+<!--FOTO DE TODO EL CLUB-->
+    <header id="inicio" class="relative h-[80vh] flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 bg-black/60 z-10"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&q=80')] bg-cover bg-center"></div>
+        <div class="relative z-20 px-4">
+            <h1 class="text-5xl md:text-7xl font-black italic uppercase mb-4">Más que un Club, <span class="text-amarillo">Una Familia</span></h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Únete a los Barbarians, siente la pasión del rugby y forja tu carácter.</p>
+            <a href="#inscripcion" class="bg-amarillo text-azul px-8 py-4 rounded-full font-black uppercase shadow-xl hover:bg-white transition inline-block">¡Inscríbete Ahora!</a>
+        </div>
+    </header>
+<!--CALENDARIO DE GOOGLE-->
+    <section id="eventos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-black text-azul mb-10 italic text-center uppercase">
+    <span class="border-b-4 border-amarillo pb-2">Próximos Eventos</span>
+</h2>
+            <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-azul h-[600px]">
+                <iframe src="https://calendar.google.com/calendar/embed?src=deniarugbyclub1991%40gmail.com&ctz=Europe%2FMadrid" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+    </section>
+<!--FORMULARIO DE INSCRIPCIÓN DE LOS JUGADORES-->
+    <section id="inscripcion" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border-t-8 border-azul">
+                <h2 class="text-4xl font-black text-azul mb-10 italic text-center underline decoration-amarillo">FICHA DE INSCRIPCIÓN</h2>
+                
+                <form id="rugbyForm" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div><label class="block font-bold mb-2 text-azul">Nombre *</label><input type="text" name="nombre" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div><label class="block font-bold mb-2 text-azul">Primer Apellido *</label><input type="text" name="apellido1" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div><label class="block font-bold mb-2 text-azul">Segundo Apellido</label><input type="text" name="apellido2" class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div><label class="block font-bold mb-2 text-azul">Fecha de nacimiento *</label><input type="date" name="fechaNacimiento" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div><label class="block font-bold mb-2 text-azul">Teléfono de contacto *</label><input type="text" name="telefono" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div class="md:col-span-2"><label class="block font-bold mb-2 text-azul">Dirección *</label><input type="text" name="direccion" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                        <div class="md:col-span-2"><label class="block font-bold mb-2 text-azul">Email *</label><input type="email" name="email" required class="w-full p-3 bg-gray-50 border rounded-lg focus:ring-2 focus:ring-azul outline-none"></div>
+                    </div>
+<!--INTRODUCCIÓN DE IMÁGENES EN EL FORMULARIO-->
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block font-bold mb-2 text-azul"><i class="fas fa-camera mr-2"></i>Foto de/de la jugador/a *</label>
+                            <div class="drop-zone h-32 flex items-center justify-center rounded-lg cursor-pointer hover:bg-gray-50 border-2 border-dashed border-gray-300" id="dropZoneFoto">
+                                <span class="text-gray-400 font-medium">Arrastra aquí o haz click</span>
+                                <input type="file" name="inputFoto" id="inputFoto" class="hidden" accept="image/*">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-2 text-azul"><i class="fas fa-id-card mr-2"></i>Documentación jugador/a (DNI) *</label>
+                            <div class="drop-zone h-32 flex items-center justify-center rounded-lg cursor-pointer hover:bg-gray-50 border-2 border-dashed border-gray-300" id="dropZoneJugador">
+                                <span class="text-gray-400 font-medium">Anverso y reverso</span>
+                                <input type="file" name="DNI_Jugador" id="inputDocumentoJugador" class="hidden" accept="image/*,application/pdf">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block font-bold mb-2 text-azul"><i class="fas fa-users-cog mr-2"></i>DNI Padre/Madre/Tutor (Menores 18)</label>
+                            <div class="drop-zone h-32 flex items-center justify-center rounded-lg cursor-pointer hover:bg-gray-50 border-2 border-dashed border-gray-300" id="dropZonePaterno">
+                                <span class="text-gray-400 font-medium">Opcional para adultos</span>
+                                <input type="file" name="DNI_Tutor" id="inputDocumentoPaterno" class="hidden" accept="image/*,application/pdf">
+                            </div>
+                        </div>
+                    </div>
+<!--DECLARACIÓN DE RESPONSABILIDAD Y PROTECCIÓN DE DATOS-->
+                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-200">
+                        <div class="flex items-start">
+                            <input id="privacidad" name="privacidad" type="checkbox" required class="w-5 h-5 text-azul border-gray-300 rounded focus:ring-azul mt-1 cursor-pointer">
+                            <div class="ml-4 text-sm">
+                                <label for="privacidad" class="font-bold text-azul">Acepto la Política de Protección de Datos *</label>
+                                <p class="text-gray-600 mt-1 leading-tight text-xs">
+                                    Responsable: Barbarians Marina Alta / Denia Rugby Club. Finalidad: Gestión de la ficha federativa y contacto. 
+                                    Sus documentos se cifran y guardan en servidor seguro. Puede ejercer sus derechos de acceso y rectificación en el email del club.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" id="btnSubmit" class="w-full bg-azul text-white py-4 rounded-xl font-black text-xl hover:bg-black transition-all shadow-lg hover:-translate-y-1">
+                        ENVIAR INSCRIPCIÓN
+                    </button>
+                    <p id="msg" class="text-center font-bold mt-4"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+<!--APARTADO DE LA TIENDA DEL CLUB-->
+    <section id="tienda" class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-black text-azul mb-10 italic text-center uppercase">
+    <span class="border-b-4 border-amarillo pb-2">MERCHANDISING</span>
+</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-100 rounded-2xl mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80" alt="Camiseta Titular" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic">Camiseta Titular</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">45,00 €</p>
+                <button class="w-full bg-amarillo text-azul py-3 rounded-xl font-black hover:bg-azul hover:text-white transition uppercase">Comprar</button>
+            </div>
+
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-100 rounded-2xl mb-6 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1519326844852-704caea5679e?auto=format&fit=crop&q=80" alt="Camiseta Visitante" class="w-full h-full object-cover group-hover:scale-110 transition duration-500 text-gray-300 flex items-center justify-center">
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic">Camiseta Visitante</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">45,00 €</p>
+                <button class="w-full bg-amarillo text-azul py-3 rounded-xl font-black hover:bg-azul hover:text-white transition uppercase">Comprar</button>
+            </div>
+
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fas fa-image text-4xl text-gray-400"></i>
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic text-gray-400 italic">Pantalones (Próximamente)</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">-- €</p>
+                <button disabled class="w-full bg-gray-200 text-gray-400 py-3 rounded-xl font-black uppercase cursor-not-allowed">Sin Stock</button>
+            </div>
+
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fas fa-plus text-4xl text-gray-300"></i>
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic">Producto Nuevo</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">-- €</p>
+                <button class="w-full bg-amarillo text-azul py-3 rounded-xl font-black hover:bg-azul hover:text-white transition uppercase">Próximamente</button>
+            </div>
+
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fas fa-plus text-4xl text-gray-300"></i>
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic">Sudadera Club</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">35,00 €</p>
+                <button class="w-full bg-amarillo text-azul py-3 rounded-xl font-black hover:bg-azul hover:text-white transition uppercase">Comprar</button>
+            </div>
+
+            <div class="group border-2 border-gray-100 rounded-3xl p-6 hover:border-amarillo transition shadow-sm hover:shadow-xl text-left">
+                <div class="h-64 bg-gray-200 rounded-2xl mb-6 overflow-hidden flex items-center justify-center">
+                    <i class="fas fa-plus text-4xl text-gray-300"></i>
+                </div>
+                <h3 class="font-black text-xl text-azul uppercase italic">Pack Barbarian</h3>
+                <p class="text-gray-600 mb-4 font-bold text-2xl">-- €</p>
+                <button class="w-full bg-amarillo text-azul py-3 rounded-xl font-black hover:bg-azul hover:text-white transition uppercase">Ver más</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- APARTADO DE CONTACTO CON EL CLUB-->
+    <footer id="contacto" class="bg-black text-white py-12">
+    <div class="container mx-auto px-6 grid md:grid-cols-3 gap-12 items-start">
+        <div class="text-center md:text-left">
+            <h4 class="text-amarillo font-black text-xl mb-6 italic uppercase">Contacto</h4>
+            <div class="space-y-3 text-gray-400 font-medium">
+                <p>
+                    <a href="https://maps.google.com/?cid=12214911756283329945&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="hover:text-amarillo transition duration-300">
+                        <i class="fas fa-map-marker-alt text-amarillo mr-2"></i>CAMPO: Cami del Regatxo, 6, Denia
+                    </a>
+                </p>
+                <p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Xabia+7+Denia" target="_blank" class="hover:text-amarillo transition duration-300">
+                        <i class="fas fa-map-marker-alt text-amarillo mr-2"></i>SEDE SOCIAL: C / Xabia, 7, Denia
+                    </a>
+                </p>
+                <p>
+                    <a href="tel:+34611654014" class="hover:text-amarillo transition duration-300">
+                        <i class="fas fa-phone text-amarillo mr-2"></i> +34 611 654 014
+                    </a>
+                </p>
+                <p>
+                    <a href="mailto:deniarugbyclub1991@gmail.com" class="hover:text-amarillo transition duration-300">
+                        <i class="fas fa-envelope text-amarillo mr-2"></i> deniarugbyclub1991@gmail.com
+                    </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <h4 class="text-amarillo font-black text-xl mb-6 italic uppercase">Síguenos</h4>
+            <div class="flex justify-center space-x-8 text-4xl">
+                <a href="https://www.facebook.com/barbariansmarinaalta" class="hover:text-amarillo transition"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/barbariansmarinaalta/" class="hover:text-amarillo transition"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="w-full">
+            <div class="rounded-xl overflow-hidden h-64 md:h-80 border-4 border-amarillo shadow-2xl">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3113.882196652494!2d0.0913012!3d38.8449821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129e02ca00dc17e3%3A0xa98415866402bd99!2sPolideportivo%20Municipal%20de%20Denia!5e0!3m2!1ses!2ses!4v1710000000000!5m2!1ses!2ses" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-12 pt-8 border-t border-gray-800 text-gray-500 text-xs italic">
+        © 2026 BARBARIANS MARINA ALTA - DENIA RUGBY CLUB
+    </div>
+</footer>
+
+    <script>
+        document.getElementById('rugbyForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const btn = document.getElementById('btnSubmit');
+            const msg = document.getElementById('msg');
+            const URL_SCRIPT = "TU_URL_DE_APPS_SCRIPT_AQUI"; // RECUERDA CAMBIAR ESTO
+
+            // Validación de archivos obligatorios
+            if (document.getElementById('inputFoto').files.length === 0 || 
+                document.getElementById('inputDocumentoJugador').files.length === 0) {
+                alert("¡Faltan documentos! La foto y el DNI del jugador son obligatorios.");
+                return;
+            }
+
+            btn.innerText = "PROCESANDO ENVÍO...";
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+
+            const formData = new FormData(e.target);
+            const datosEnvio = Object.fromEntries(formData.entries());
+            datosEnvio.archivos = [];
+
+            const fileInputs = document.querySelectorAll('input[type="file"]');
+            const promesas = [];
+
+            fileInputs.forEach(input => {
+                if (input.files.length > 0) {
+                    const file = input.files[0];
+                    const promesa = new Promise((resolve) => {
+                        const reader = new FileReader();
+                        reader.onload = (event) => {
+                            datosEnvio.archivos.push({
+                                nombre: input.name + "_" + file.name,
+                                tipo: file.type,
+                                base64: event.target.result
+                            });
+                            resolve();
+                        };
+                        reader.readAsDataURL(file);
+                    });
+                    promesas.push(promesa);
+                }
+            });
+
+            await Promise.all(promesas);
+
+            try {
+                await fetch(URL_SCRIPT, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(datosEnvio)
+                });
+
+                msg.innerHTML = `<div class="bg-green-100 text-green-800 p-4 rounded-xl border border-green-200">¡Inscripción enviada con éxito! Revisa tu email.</div>`;
+                btn.innerText = "¡ENVIADO!";
+                e.target.reset();
+                document.querySelectorAll('.drop-zone span').forEach(s => s.innerText = "Arrastra aquí o haz click");
+            } catch (error) {
+                console.error(error);
+                msg.innerText = "Error en el envío. Contacta con el club.";
+                btn.disabled = false;
+                btn.innerText = "REINTENTAR";
+            }
+        };
+
+        function configurarDragAndDrop(idZona, idInput) {
+            const dropZone = document.getElementById(idZona);
+            const input = document.getElementById(idInput);
+            dropZone.onclick = () => input.click();
+            dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('drop-zone--over'); };
+            dropZone.ondragleave = () => dropZone.classList.remove('drop-zone--over');
+            dropZone.ondrop = (e) => {
+                e.preventDefault();
+                dropZone.classList.remove('drop-zone--over');
+                if (e.dataTransfer.files.length > 0) {
+                    input.files = e.dataTransfer.files;
+                    dropZone.querySelector('span').innerText = e.dataTransfer.files[0].name;
+                }
+            };
+            input.onchange = () => { if (input.files.length > 0) dropZone.querySelector('span').innerText = input.files[0].name; };
+        }
+
+        configurarDragAndDrop('dropZoneFoto', 'inputFoto');
+        configurarDragAndDrop('dropZoneJugador', 'inputDocumentoJugador');
+        configurarDragAndDrop('dropZonePaterno', 'inputDocumentoPaterno');
+    </script>
+</body>
+</html>
