@@ -107,8 +107,8 @@
 
                 <div class="grid grid-cols-2 gap-6 mt-10 border-t border-gray-100 pt-8">
                     <div>
-                        <p class="text-3xl font-black text-azul italic">+150</p>
-                        <p class="text-sm text-gray-500 uppercase font-bold">Jugadores</p>
+                        <p class="text-3xl font-black text-azul italic">+35</p>
+                        <p class="text-sm text-gray-500 uppercase font-bold">años</p>
                     </div>
                     <div>
                         <p class="text-3xl font-black text-azul italic">100%</p>
@@ -117,14 +117,6 @@
                 </div>
             </div>
         </div> </div> </section> <section id="eventos" class="py-16 bg-white border-t border-gray-100">
-    <div class="container mx-auto px-6">
-        <h2 class="text-3xl md:text-4xl font-black text-azul mb-10 italic text-center uppercase">
-            <span class="border-b-4 border-amarillo pb-2">Próximos Eventos</span>
-        </h2>
-        <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-azul h-[600px]">
-            <iframe src="https://calendar.google.com/calendar/embed?src=deniarugbyclub1991%40gmail.com&ctz=Europe%2FMadrid" style="border: 0" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
-        </div>
-    </div>
 </section>
 <!--CALENDARIO DE GOOGLE-->
     <section id="eventos" class="py-16 bg-white">
@@ -429,7 +421,8 @@
             const btn = document.getElementById('btnSubmit');
             const msg = document.getElementById('msg');
             //URL APPSCRIPT DRIVE
-            const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxgpM0utRLy80EyfTLFkm6V3nVObl_VpnE2KOmfJ5S77WFXJ6nEHeUhiBaOHtgcuXLo/exec";
+            //const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxgpM0utRLy80EyfTLFkm6V3nVObl_VpnE2KOmfJ5S77WFXJ6nEHeUhiBaOHtgcuXLo/exec"; original
+            const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbxnTt0ydogT7YbZzWMxRO83lRj5nDZJTCzIb8LmgZTUDu0M0uQfEdh7FFVfZjTbzL5t/exec";
 
             // Validación de archivos obligatorios
             if (document.getElementById('inputFoto').files.length === 0 || 
